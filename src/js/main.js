@@ -275,13 +275,11 @@ function compare(id, errorText) {
         errorDom.innerHTML = errorText;
         //console.log(document.getElementById(id).parents('.form__group')[0].appendChild(errorDom));
         document.getElementById(id).parents('.form__group')[0].appendChild(errorDom);
-        if(errorText !== '') {
-            document.getElementById(id).focus();
-        }
+        
     }else {
         document.getElementById(id).nextSibling.innerHTML = errorText;
         console.log(document.querySelectorAll('#'+id));
-        if(document.getElementById(id).nextSibling) {
+        if(document.getElementById(id).offsetParent.className == 'price') {
             document.getElementById(id).parentNode.nextSibling.innerHTML = errorText;
         }
         console.log(errorText);
